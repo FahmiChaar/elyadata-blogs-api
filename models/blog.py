@@ -2,7 +2,7 @@ from mongoengine import Document, StringField, IntField
 from pydantic import BaseModel
 from typing import Optional
 
-class Blogs(Document):
+class Blog(Document):
     title = StringField()
     content = StringField()
     upvote = IntField()
