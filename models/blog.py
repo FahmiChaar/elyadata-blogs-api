@@ -5,6 +5,7 @@ from typing import Optional
 class Blog(Document):
     title = StringField()
     content = StringField()
+    author = StringField()
     upvote = IntField()
     downvote = IntField()
 
