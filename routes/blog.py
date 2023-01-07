@@ -8,6 +8,10 @@ blogs = APIRouter()
 async def get_blogs():
     return json.loads(Blog.objects().to_json())
 
+@blogs.get('/blogs/{blog_id}')
+async def get_blog(blog_id: str):
+    return json.loads(Blog.objects().get(id=blog_id).to_json())
+
 @blogs.post('/blogs')
 async def create_blog(data: BlogSchema):
     blog = Blog(
