@@ -4,14 +4,26 @@
 
 ## Run the Api
 - Clone the project
-> git clone https://github.com/FahmiChaar/elyadata-blogs-api.git
+```properties
+git clone https://github.com/FahmiChaar/elyadata-blogs-api.git
+```
 - cd to project folder
-> cd elyadata-blogs-api
+```properties
+cd elyadata-blogs-api
+```
 - Setup your virtual envirment and activate
+```properties
+python3 -m venv env
+source env/bin/activate
+```
 - Install requirments
-> pip freeze > requirements.txt
+```properties
+pip install -r requirements.txt
+```
 - Run api
-> uvicorn main:app --reload
+```properties
+uvicorn main:app --reload
+```
 
 ## DB Configuration
 - You can change db config in `config/db.py`
