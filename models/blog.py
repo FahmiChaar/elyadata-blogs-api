@@ -15,3 +15,6 @@ class BlogSchema(BaseModel):
     author: str
     upvote: Optional[int]
     downvote: Optional[int]
+
+class VoteSchema(BaseModel):
+    voteType: str

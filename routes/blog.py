@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models.blog import Blog, BlogSchema
+from models.blog import Blog, BlogSchema, VoteSchema
 import json
 
 blogs = APIRouter()
@@ -21,5 +21,13 @@ async def create_blog(data: BlogSchema):
         upvote = data.upvote or 0,
         downvote = data.downvote or 0
     )
+    blog.save()
+    return json.loads(blog.to_json())
+
+@blogs.put('/blogs/{id}/vote')
+async def vote(id: str, data: VoteSchema):
+    blog = Blog.objects().get(id=id)
+    blog.upvote = blog.upvote if data.voteType != 'upvote' else (blog.upvote + 1)
+    blog.downvote = blog.downvote if data.voteType != 'downvote' else (blog.downvote + 1)
     blog.save()
     return json.loads(blog.to_json())
