@@ -28,8 +28,8 @@ uvicorn main:app --reload
 ## DB Configuration
 - You can change db config in `config/db.py`
 - The default db name is `elyadata`
-- The default collection name is `blog`
+- The Collection name should be `blog`
 - The default mongodb server port is `27017`
 
 ## CORS
-- Only this url is allowed `http://localhost:4200/` if you can change it in `main.py`
+- Only this url is allowed `http://localhost:4200/`, you can change it in `main.py`
